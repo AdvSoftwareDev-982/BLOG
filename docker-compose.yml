@@ -1,0 +1,26 @@
+services:
+  frontend:
+    container_name: frontend
+    build: ./frontend
+    ports:
+      - '5173:5173'
+    volumes:
+      - ./frontend/blog:/app
+    command: npm run dev -- --host
+
+  backend:
+    container_name: backend
+    build: ./backend
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./backend:/app
+
+  db:
+    image: postgres:15.3
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: testing
+      POSTGRES_USER: postgres
+    volumes:
+      - ./backend/db/init.sql:/docker-entrypoint-initdb.d/init.sql
