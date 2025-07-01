@@ -6,6 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_asyn
 from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy import Column, Integer, Text
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.pool import NullPool
 
 DATABASE_URL = "postgresql+asyncpg://postgres:testing@db/db"
 
@@ -18,7 +19,7 @@ class User(SQLAlchemyBaseUserTableUUID, Base):
     pass
 
 
-engine = create_async_engine(DATABASE_URL)
+engine = create_async_engine(DATABASE_URL, poolclass=NullPool)
 async_session_maker = async_sessionmaker(engine, expire_on_commit=False)
 
 

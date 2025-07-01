@@ -4,3 +4,6 @@ uvicorn
 fastapi-users[sqlalchemy]
 asyncpg
 fastcrud
+httpx
+pytest
+trio

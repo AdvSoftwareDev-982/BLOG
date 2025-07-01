@@ -39,18 +39,12 @@ app.include_router(
     tags=["users"],
 )
 
-
-@app.get("/authenticated-route")
-async def authenticated_route(user: User = Depends(current_active_user)):
-    return {"message": f"Hello {user.email}!"}
-
-
 blog_router = crud_router(
     session=get_async_session,
     model=Blog,
     create_schema=BlogCreate,
     update_schema=BlogUpdate,
     path="/blog",
-    tags=["Blog"]
+    tags=["blog"]
 )
 app.include_router(blog_router)
