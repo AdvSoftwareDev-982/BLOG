@@ -5,7 +5,7 @@ from fastcrud import FastCRUD, crud_router
 from .db import User, create_db_and_tables, Blog, get_async_session
 from .schemas import UserCreate, UserRead, UserUpdate, BlogCreate, BlogUpdate
 from .users import auth_backend, current_active_user, fastapi_users
-
+from fastapi.middleware.cors import CORSMiddleware
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -14,6 +14,15 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan)
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(
     fastapi_users.get_auth_router(auth_backend), prefix="/auth/jwt", tags=["auth"]
