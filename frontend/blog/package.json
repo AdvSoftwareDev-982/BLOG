@@ -27,5 +27,9 @@
   },
   "dependencies": {
     "sirv-cli": "^3.0.1"
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "jsdom"
   }
 }
