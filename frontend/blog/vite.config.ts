@@ -11,4 +11,7 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     conditions: mode === "test" ? ["browser"] : [],
   },
+  server: {
+    allowedHosts: true,
+  },
 }));
