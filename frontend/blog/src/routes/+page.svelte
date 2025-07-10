@@ -1,18 +1,7 @@
-<nav>
-  <ul>
-    <li><strong>BLOG</strong></li>
-  </ul>
-  <ul>
-    <li><a href="/about">About</a></li>
-    <li><a href="#">Log In</a></li>
-    <li><a href="#">Register</a></li>
-  </ul>
-</nav>
-
 <script lang="ts">
-	import type { PageProps } from './$types';
+  import type { PageProps } from './$types';
 
-	let { data }: PageProps = $props();
+  let { data }: PageProps = $props();
 </script>
 
 <br>
