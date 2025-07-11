@@ -1,12 +1,3 @@
-<nav>
-  <ul>
-    <li><strong>BLOG</strong></li>
-  </ul>
-  <ul>
-    <li><a href="/">Back</a></li>
-  </ul>
-</nav>
-
 <script lang="ts">
 	import type { PageProps } from './$types';
 
