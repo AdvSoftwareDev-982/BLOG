@@ -4,11 +4,12 @@
   let { data }: PageProps = $props();
 </script>
 
-<br>
 {#each data.blogs.data as blog}
-<a href="/blog/{blog.id}"><h1>{blog.title}</h1></a>
-<div>{@html blog.text}</div>
-<br><br><br>
+<div class="container">
+  <a href="/blog/{blog.id}"><h1>{blog.title}</h1></a>
+  <div>{@html blog.summary}</div>
+  <br><br>
+</div>
 {/each}
 
 <p>Blog count: {data.blogs.total_count}</p>

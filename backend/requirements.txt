@@ -7,3 +7,7 @@ fastcrud
 httpx
 pytest
 trio
+transformers
+sentencepiece
+torch
+protobuf

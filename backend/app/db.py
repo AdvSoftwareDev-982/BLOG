@@ -41,4 +41,5 @@ class Blog(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     title = Column(Text, nullable=False)
+    summary = Column(Text, nullable=False)
     text = Column(Text, nullable=False)

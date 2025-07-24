@@ -13,6 +13,7 @@ export const actions = {
       body: JSON.stringify({
         title: title,
         text: text,
+        summary: "",
       }),
     });
 

@@ -19,8 +19,5 @@ class UserUpdate(schemas.BaseUserUpdate):
 class BlogCreate(BaseModel):
     title: str
     text: str
+    summary: str
 
-
-class BlogUpdate(BaseModel):
-    title: str
-    text: str
