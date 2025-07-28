@@ -4,7 +4,7 @@ from fastapi import Depends
 from fastapi_users.db import SQLAlchemyBaseUserTableUUID, SQLAlchemyUserDatabase
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy import Column, Integer, Text
+from sqlalchemy import Column, Integer, Text, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.pool import NullPool
 
@@ -41,5 +41,6 @@ class Blog(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     title = Column(Text, nullable=False)
+    author = Column(String, nullable=False)
     summary = Column(Text, nullable=False)
     text = Column(Text, nullable=False)

@@ -6,7 +6,7 @@
 
 {#each data.blogs.data as blog}
 <div class="container">
-  <a href="/blog/{blog.id}"><h1>{blog.title}</h1></a>
+  <a href="/blog/{blog.id}"><h1>{blog.title}</h1></a> by <i>{blog.author}</i>
   <div>{@html blog.summary}</div>
   <br><br>
 </div>

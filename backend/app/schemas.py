@@ -18,6 +18,7 @@ class UserUpdate(schemas.BaseUserUpdate):
 
 class BlogCreate(BaseModel):
     title: str
+    author: str
     text: str
     summary: str
 

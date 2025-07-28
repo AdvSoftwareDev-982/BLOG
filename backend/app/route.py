@@ -22,6 +22,7 @@ async def create_blog(
     input_ids = tokenizer("summarize: " + blog_data.text, return_tensors="pt").input_ids
     outputs = model.generate(input_ids=input_ids)
     blog_data.summary = tokenizer.decode(outputs[0], skip_special_tokens=True)
+    blog_data.author = user.email
 
     return await blog_crud.create(db, blog_data)
 
