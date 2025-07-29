@@ -17,7 +17,7 @@ export const actions = {
     });
 
     const token = await res.json();
-    cookies.set("jwt", token.access_token, { path: "/" });
+    cookies.set("jwt", token.access_token, { path: "/", secure: false });
 
     return { success: true };
   },
